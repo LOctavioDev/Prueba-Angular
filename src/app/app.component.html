@@ -1,0 +1,27 @@
+<!-- BOTON QUE DIGA SEGUIR O DAEJAR DE SEGUIR DEPENDIENDO EL STATUS ABAJO S EPINTA UNA IMAGEN DE UN AVANTAR SI NO LO ESTA SIGUIENDO, PERO SI OL SIGUE PINTAR EL DE UNA PERSONA 
+
+
+dos botones uno para hombre, y uno para mujer
+depndiendo del boton que de click mostrar una foto de un hombre o de una mujer la foto debe tener un borde de color rosa o azul dependiendo 
+
+
+seguir gris, no seguir, azul-->
+
+
+
+
+
+<button (click)="seguirNoseguir()" mat-stroked-button [ngClass]="{'bg-gray-500': !estasiguiendo, 'bg-blue-500': estasiguiendo}">
+  {{ estasiguiendo ? 'No segir' : 'Seguir' }}
+</button>
+
+<div class="m-4" >
+  <img *ngIf="!estasiguiendo" src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="" class="w-16 h-16 rounded-full">
+  
+  <img *ngIf="estasiguiendo" src="https://as1.ftcdn.net/v2/jpg/04/56/58/14/1000_F_456581427_5XpGqNqCwLAGwaFFvxVGvnW2teOfJ0ZL.jpg" alt="" class="w-16 h-16 rounded-full">
+</div>
+
+
+
+
+<router-outlet></router-outlet>
